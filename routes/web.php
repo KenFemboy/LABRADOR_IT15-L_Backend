@@ -8,4 +8,3 @@ Route::get('/', function () {
 });
 
 Route::get('/posts', [PostsController::class, 'index']);
-Route::post('/login', [AuthController::class, 'login']);

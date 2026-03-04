@@ -7,3 +7,4 @@ How to install
  5. Run php artisan key:generate (if error: composer install)
  6. Make empty database in Laragon and setup .env file with database
  7. Migrate database: php artisan migrate:fresh
+ 8. to seed database run :php artisan db:seed
