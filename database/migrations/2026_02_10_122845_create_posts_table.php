@@ -16,7 +16,7 @@ return new class extends Migration
         $table->string('title');
         $table->text('body');
         $table->timestamps();
-        $table->int('category_id')->constrained('categories');
+        $table->integer('category_id')->constrained('categories');
 
 });
 
