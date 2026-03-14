@@ -15,13 +15,16 @@ class Student extends Model
         'gender',
         'birth_date',
         'email',
-        'address',
-        'course_id',
+        'department_id',
         'year_level'
     ];
 
-    public function course()
+    public function courses()
+{
+    return $this->belongsToMany(Course::class, 'course_student');
+}
+        public function department()
     {
-        return $this->belongsTo(Course::class);
+        return $this->belongsTo(Department::class);
     }
 }

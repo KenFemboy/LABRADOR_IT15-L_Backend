@@ -1,25 +1,22 @@
 <?php
 
 namespace App\Models;
-
+use App\Models\Department;
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Course extends Model
 {
-    protected $table = "courses";
+    use HasFactory;
 
-    protected $fillable = [
-        'department_id',
-        'course_name',
-        'enrolled_students'
-    ];
+    protected $fillable = ['course_name', 'enrolled_students', 'department_id'];
 
-    public function students()
-    {
-        return $this->hasMany(Student::class);
-    }
-        public function department()
+    public function department()
     {
         return $this->belongsTo(Department::class);
+    }
+
+        public function students()
+    {
+        return $this->belongsToMany(Student::class ,'course_student');
     }
 }

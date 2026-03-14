@@ -8,9 +8,12 @@ class Department extends Model
 {
     protected $fillable = [
         'department_name',
-        'total_students'
     ];
-        public function courses()
+        public function students()
+    {
+        return $this->hasMany(Student::class);
+    }
+    public function courses()
     {
         return $this->hasMany(Course::class);
     }

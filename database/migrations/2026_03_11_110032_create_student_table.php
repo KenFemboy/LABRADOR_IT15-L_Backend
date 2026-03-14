@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('gender');
             $table->date('birth_date');
             $table->string('email')->unique();
-            $table->string('course');
+            $table->integer('department_id');
             $table->integer('year_level');
             $table->timestamps();
         });
