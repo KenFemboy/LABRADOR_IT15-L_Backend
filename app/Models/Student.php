@@ -5,7 +5,6 @@ namespace App\Models;
 use App\Models\Course;
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Sanctum\HasApiTokens;
-
 class Student extends Model
 {
     use HasApiTokens;
