@@ -1,10 +1,13 @@
-How to install
- 1. Download Php
- 1. Install Composer with php path
- 2. Php ( change php.ini extention ZIP, MYSQL)
- 3. Change Environment Variable 
- 4. Open repo run composer install/update then cp .env.example .env
- 5. Run php artisan key:generate (if error: composer install)
- 6. Make empty database in Laragon and setup .env file with database
- 7. Migrate database: php artisan migrate:fresh
- 8. to seed database run :php artisan db:seed
+How to run
+ 1. Enusure you have Install Php and Composer
+ 2. In the terminal run "composer install" or "composer update"
+ 3. Run "Php artisan migrate:fresh" after that "php artisan db:seed"
+ 4. Wait for the migration and seeder to finish
+ 5. Proceed to the Frontend (Refere to Labrador_IT15-L_Frontend for instructions)
+ 6. In the frontend or postman use the example admin credentials
+    For Postman:
+    Go to Body then Raw then paste this as a JSON format
+    "email": "test@example.com",
+    "password": "password"u
+    Method Should be POST and the URL is
+    http://127.0.0.1:8000/api/admin/login
