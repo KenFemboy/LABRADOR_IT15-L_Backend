@@ -1,12 +1,15 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AdminAuthController;
-use App\Http\Controllers\Api\StudentAuthController;
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\StudentAuthController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\StudentController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\SchoolDayController;
 
+Route::get('/school-days', [SchoolDayController::class, 'index']);
 
 
 
@@ -19,7 +22,8 @@ Route::middleware('auth:sanctum')->post('/logout', [AuthController::class, 'logo
 
 
 Route::get('/departments', [DepartmentController::class, 'index']);
-Route::get('/departments/students-count', [DepartmentController::class, 'studentCounts']);
+
 
 Route::get('/courses', [CourseController::class, 'index']);
 Route::get('/courses/{id}', [CourseController::class, 'show']);
+Route::get('/students/{id}/courses', [StudentController::class, 'getCourses']);

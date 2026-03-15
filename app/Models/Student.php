@@ -18,13 +18,13 @@ class Student extends Model
         'department_id',
         'year_level'
     ];
-
+    public function department()
+        {
+            return $this->belongsTo(Department::class);
+        }
     public function courses()
-{
-    return $this->belongsToMany(Course::class, 'course_student');
-}
-        public function department()
-    {
-        return $this->belongsTo(Department::class);
-    }
+        {
+            return $this->belongsToMany(Course::class, 'course_student');
+        }
+    
 }
